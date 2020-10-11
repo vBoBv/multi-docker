@@ -12,8 +12,8 @@ script:
 after_success:
   - docker build -t bobbyvann/multi-client ./client
   - docker build -t bobbyvann/multi-nginx ./nginx
-  - docker build -t bobbyvann/multi-server ./server
   - docker build -t bobbyvann/multi-worker ./worker
+  - docker build -t bobbyvann/multi-server ./server
 
   #Login to Docker CLI
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
