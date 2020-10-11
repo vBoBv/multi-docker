@@ -21,5 +21,5 @@ after_success:
   #Take those images and push them to docker hub
   - docker push bobbyvann/multi-client
   - docker push bobbyvann/multi-nginx
-  - docker push bobbyvann/multi-server
   - docker push bobbyvann/multi-worker
+  - docker push bobbyvann/multi-server
