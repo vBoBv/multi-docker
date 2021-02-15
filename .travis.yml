@@ -23,3 +23,15 @@ after_success:
   - docker push bobbyvann/multi-nginx
   - docker push bobbyvann/multi-worker
   - docker push bobbyvann/multi-server
+
+deploy:
+  provider: elasticbeanstalk
+  region: 'ap-southeast-2'
+  app: 'multi-docker'
+  env: 'MultiDocker-env'
+  bucket_name: 'elasticbeanstalk-ap-southeast-2-568123056836'
+  bucket_path: 'docker-multi'
+  on:
+    branch: master
+  access_key_id: $AWS_ACCESS_KEY
+  secret_access_key: $AWS_SECRET_KEY
